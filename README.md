@@ -1,2 +1,2 @@
 # machine_learning
-machine learning files stored inn this repository
+machine learning files stored in this repository
