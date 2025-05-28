@@ -1,0 +1,72 @@
+🔹 Supervised Learning
+1. Linear Regression
+For predicting continuous values (e.g., housing prices).
+
+Simple but foundational.
+
+2. Logistic Regression
+Used for binary classification problems (e.g., spam or not spam).
+
+Also works for multi-class (with softmax/multinomial logistic regression).
+
+3. Decision Trees
+Easy to interpret.
+
+Good for both classification and regression.
+
+4. Random Forest
+An ensemble of decision trees.
+
+Reduces overfitting and improves accuracy.
+
+5. Gradient Boosting (e.g., XGBoost, LightGBM, CatBoost)
+High performance in structured/tabular data.
+
+Commonly used in Kaggle competitions.
+
+6. Support Vector Machines (SVM)
+Powerful for high-dimensional data.
+
+Effective in text classification and image recognition.
+
+7. k-Nearest Neighbors (KNN)
+Simple and non-parametric.
+
+Useful for classification tasks with small datasets.
+
+🔹 Unsupervised Learning
+8. K-Means Clustering
+Groups data into clusters based on similarity.
+
+Great for segmentation tasks.
+
+9. Hierarchical Clustering
+Builds a hierarchy of clusters.
+
+Useful for exploring data structures.
+
+10. Principal Component Analysis (PCA)
+Dimensionality reduction technique.
+
+Helps in visualization and noise reduction.
+
+🔹 Neural Networks & Deep Learning
+11. Artificial Neural Networks (ANN)
+Basic form of deep learning.
+
+Handles complex nonlinear relationships.
+
+12. Convolutional Neural Networks (CNN)
+Best for image data.
+
+Used in computer vision tasks.
+
+13. Recurrent Neural Networks (RNN), LSTM, GRU
+Best for sequence/time-series data.
+
+Used in NLP, forecasting, etc.
+
+🔹 Reinforcement Learning (Introductory)
+14. Q-Learning / Deep Q-Networks (DQN)
+Good to know the basics if you're going into areas like robotics or game AI.
+
