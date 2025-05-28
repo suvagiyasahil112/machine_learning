@@ -72,14 +72,20 @@ params = {
 
 cv_results = xgb.cv(dtrain=dtrain, params=params, nfold=5, num_boost_round=100,
                     early_stopping_rounds=10, metrics="mlogloss", as_pandas=True, seed=42)
-
 best_num_boost_round= cv_results['test-mlogloss-mean'].idxmin()
 model = xgb.train(params,dtrain,num_boost_round=best_num_boost_round)
 
-y_pred_prob = model.predict(dtest)
+
+cv_results= xgb.cv(dtrain=dtrain,params=params, nfold=5,num_boost_round =100,
+                   early_stopping_rounds=10,metrics='mlogloss',as_pandas=True,seed=42)
+best_numm_boost_round=  cv_results['test-mloglos-mean'].idxmin()
+model = xgb.train(params,dtrain ,num_boost_round=best_numm_boost_round)
+
+
+y_pred_prob = model.predict(dtest)  
 y_pred = y_pred_prob.argmax(axis=1)
 
 accuracy = accuracy_score(y_test, y_pred)
 print(f'Accuracy: {accuracy * 100:.2f}%')
 
-model.save_model('xgboost_model1.json')
+model.save_model('xgboost_model1.json')     
