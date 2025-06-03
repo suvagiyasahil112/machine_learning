@@ -53,8 +53,15 @@ final['Cancelled'] = final['Cancellation Year'].notna().astype(int)
 print(final.head(12))
 final = final.drop(["Cancellation Month","Enrollment Month"],axis=1)
 
-plt.figure(figsize=(10,8))
-sns.histplot(x=final['Loyalty Card'],y=final["CLV"])
+# plt.figure(figsize=(10,8))
+# sns.histplot(x=final['Loyalty Card'],y=final["CLV"])
 
-plt.show()
+# plt.show()
 
+
+count_of_enrollment = final.groupby("Enrollment Year")['Loyalty Number'].count().reset_index()
+
+print('count of enrollment ',count_of_enrollment)
+
+cancellation = final.groupby("Cancellation Year")['Loyalty Number'].count().reset_index()
+print(" count of cancellation : ",cancellation)
