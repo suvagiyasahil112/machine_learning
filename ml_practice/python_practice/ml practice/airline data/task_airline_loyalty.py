@@ -77,5 +77,23 @@ merged_counts["Net"] = merged_counts["Enrollments"] - merged_counts["cancellatio
 print("net",merged_counts["Net"])
 
 
+print(final.info())
+
+print(final["Cancellation Year"])
+final["Cancellation Year"] = final["Cancellation Year"].fillna(0)
 
 
+print(final["Cancellation Year"])
+
+
+final['Salary'] = final["Salary"].fillna(final["Salary"].mean())
+
+print(final.info())
+
+
+categorical_columns = final.select_dtypes(include=["object"]).columns.to_list()
+print(categorical_columns)
+
+plt.figure(figsize=(12,8))
+sns.pairplot(data=final["Salary","CLV","Loyalty Card","Cancelled"])
+plt.show()
