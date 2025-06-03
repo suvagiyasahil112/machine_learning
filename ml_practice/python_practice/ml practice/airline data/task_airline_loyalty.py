@@ -65,3 +65,17 @@ print('count of enrollment ',count_of_enrollment)
 
 cancellation = final.groupby("Cancellation Year")['Loyalty Number'].count().reset_index()
 print(" count of cancellation : ",cancellation)
+
+merged_counts = pd.merge(count_of_enrollment,cancellation,how='outer',left_on="Enrollment Year",right_on="Cancellation Year")
+print("merged :",merged_counts.columns)
+
+merged_counts = merged_counts.rename(columns= {"Loyalty Number_x":"Enrollments","Loyalty Number_y":"cancellation"})
+
+print("merged new:",merged_counts)
+
+merged_counts["Net"] = merged_counts["Enrollments"] - merged_counts["cancellation"]
+print("net",merged_counts["Net"])
+
+
+
+
