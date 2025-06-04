@@ -2,7 +2,9 @@ import pandas as pd
 import numpy as np 
 import math 
 import matplotlib.pyplot as plt
-import seaborn as sns
+import seaborn as sn
+from sklearn.preprocessing import  OneHotEncoder
+
 
 
 dictionary = pd.read_csv("Airline Loyalty Data Dictionary.csv")
@@ -93,7 +95,18 @@ print(final.info())
 
 categorical_columns = final.select_dtypes(include=["object"]).columns.to_list()
 print(categorical_columns)
+print(np.sum(final["Postal Code"].unique()))
+# sns.pairplot(data=final[["Salary","CLV","Loyalty Card","Enrollment Type","Marital Status"]])
+# plt.show()
 
-plt.figure(figsize=(12,8))
-sns.pairplot(data=final["Salary","CLV","Loyalty Card","Cancelled"])
-plt.show()
+
+ohe = OneHotEncoder(sparse_output=False)
+
+onehotencoded=ohe.fit_transform(final[categorical_columns])
+oh_df = pd.DataFrame(onehotencoded,columns=ohe.get_feature_names_out(categorical_columns))
+
+df = pd.concat([final,oh_df],axis=1)
+df.drop(categorical_columns,axis=1)
+# print(df.columns)
+
+# df.to_csv("df_of_columns.csv")
