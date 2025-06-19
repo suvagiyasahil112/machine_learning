@@ -1,9 +1,10 @@
-import pulp 
-import pandas as pd
-import pulp.solverdir
-import logging
+# import pulp 
+# import pandas as pd
+# import pulp.solverdir
+# import logging
 
-
+import numpy as np
+print(np.__version__)
 
 # problem = pulp.LpProblem("simple_LP_problem",pulp.LpMaximize)
 # x= pulp.LpVariable("x",lowBound=0)
