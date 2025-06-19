@@ -192,7 +192,7 @@ select Item_Type,sum(Item_Outlet_Sales),Outlet_Location_Type from bigmart b wher
 
 
 #55. WRITE a query to show total Item_Outlet_Sales BY Item_Type WHERE Item_Fat_Content IS ONLY Low Fat & LF
-select Item_Type,sum(Item_Outlet_Sales),Item_Fat_Content from bigmart b where Item_Fat_Content in ("low fat","LF") group by Item_Type ;
+select Item_Type,sum(Item_Outlet_Sales),Item_Fat_Content from bigmart b where Item_Fat_Content in ("low fat","LF") group by Item_Type  ;
 
 
 
