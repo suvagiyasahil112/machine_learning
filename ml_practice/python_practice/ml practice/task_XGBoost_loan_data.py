@@ -8,7 +8,7 @@ import seaborn as sns
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split 
 from sklearn.metrics import accuracy_score
-import pandas as pd
+
 df = pd.read_excel('Bank_Personal_Loan_Modelling.xlsx', sheet_name="Data")
 
 # print(df.head(15))
